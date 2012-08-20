@@ -10,7 +10,7 @@ def read(filename):
 
 setup(
     name='lemon-dashboard',
-    version='0.1.dev',
+    version='0.1',
     license='ISC',
     description="Dashboard app for Lemon admin",
     long_description=read('README.rst'),
