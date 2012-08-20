@@ -13,6 +13,7 @@ setup(
     version='0.1.dev',
     license='ISC',
     description="Dashboard app for Lemon admin",
+    long_description=read('README.rst'),
     url='https://github.com/trilan/lemon-dashboard',
     author='Mike Yumatov',
     author_email='mike@yumatov.org',
