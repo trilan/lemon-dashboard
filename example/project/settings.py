@@ -109,7 +109,7 @@ TEMPLATE_DIRS = (
 
 INSTALLED_APPS = (
     'dashboard',
-    'lemon.extradmin',
+    'lemon',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',

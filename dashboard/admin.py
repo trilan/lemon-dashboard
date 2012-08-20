@@ -1,11 +1,12 @@
+import lemon
+
 from django.contrib.admin.models import LogEntry
 from django.utils.translation import ugettext_lazy as _
 
-from lemon import extradmin
 from .base import dashboard, Widget
 
 
-class DashboardAdmin(extradmin.AppAdmin):
+class DashboardAdmin(lemon.AppAdmin):
 
     dashboard = dashboard
 
@@ -14,7 +15,7 @@ class DashboardAdmin(extradmin.AppAdmin):
         return self.dashboard.get_urls(self), 'dashboard', 'dashboard'
 
 
-class AdminSite(extradmin.AdminSite):
+class AdminSite(lemon.AdminSite):
 
     index_template = 'admin/custom_dashboard_index.html'
 
@@ -52,4 +53,4 @@ class AppsWidget(Widget):
 
 dashboard.register(LogWidget)
 dashboard.register(AppsWidget)
-extradmin.site.register_app('dashboard', DashboardAdmin)
+lemon.site.register_app('dashboard', DashboardAdmin)
