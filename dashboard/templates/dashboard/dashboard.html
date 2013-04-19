@@ -1,4 +1,4 @@
-{% load admin_static %}
+{% load admin_static %}{% load url from future %}
 <link rel="stylesheet" type="text/css" href="{% static 'dashboard/css/style.css' %}" />
 <script src="{% static 'lemon/js/json2.js' %}" type="text/javascript"></script>
 <script type="text/javascript">
@@ -9,7 +9,7 @@
         }).get()];
     }).get();
     $.ajax({
-      url: "{% url admin:dashboard:store %}",
+      url: "{% url 'admin:dashboard:store' %}",
       type: "POST",
       contentType: "application/json; charset=utf-8",
       data: JSON.stringify({columns: columns})
@@ -28,7 +28,7 @@
       var container = $(this).parents(".widget_container");
       var widget = container.attr("widget");
       $.ajax({
-        url: "{% url admin:dashboard:delete_widget %}",
+        url: "{% url 'admin:dashboard:delete_widget' %}",
         type: "POST",
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify(widget),
