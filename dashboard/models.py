@@ -1,8 +1,12 @@
+from django.conf import settings
 from django.contrib.auth.models import User
 from django.db import models
 from django.utils import simplejson as json
 
 from .settings import CONFIG
+
+
+USER_MODULE_PATH = getattr(settings, 'AUTH_USER_MODEL', 'auth.User')
 
 
 def _get_default_data():
@@ -24,7 +28,7 @@ class DashboardStateManager(models.Manager):
 
 class DashboardState(models.Model):
 
-    user = models.OneToOneField(User)
+    user = models.OneToOneField(USER_MODULE_PATH)
     data = models.TextField(default=_get_default_data())
 
     objects = DashboardStateManager()
