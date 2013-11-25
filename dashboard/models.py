@@ -1,7 +1,8 @@
+import json
+
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.db import models
-from django.utils import simplejson as json
 
 from .settings import CONFIG
 

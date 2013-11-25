@@ -1,4 +1,5 @@
 import sys
+import json
 
 from django.conf.urls import patterns, url, handler404, handler500
 from django.core.urlresolvers import RegexURLResolver
@@ -6,7 +7,6 @@ from django.http import HttpResponse, Http404
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.template.loader import render_to_string
-from django.utils import simplejson as json
 from django.utils.decorators import method_decorator
 from django.views.decorators.http import require_POST
 
